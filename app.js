@@ -2,9 +2,13 @@ var express = require('express');
 var path = require('path');
 var connect = require('camo').connect;
 var Measurement = require('./model/measurement');
+var imageUpdater = require('./workers/imageUpdater');
+var config = require('./config.js');
 var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
+
+imageUpdater.start(config.imagePath, config.updateFrequency);
 
 connect(database).then(function (db) {
   app.set('views', path.join(__dirname, 'views'));
@@ -18,7 +22,7 @@ connect(database).then(function (db) {
     res.render('index');
   });
 
-  http.listen(3000, function () {
+  http.listen(config.port, function () {
     console.log('Express server listening on port 3000');
   });
 });
