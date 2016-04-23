@@ -25,8 +25,19 @@ connect(database).then(function (db) {
     imageAnalyzer.analyze(image, function(err, result){
       if(err){
         console.log(err);
+      }else{
+        if(result.length > 0){
+          var face = result[0];
+          if(typeof face.scores !== 'undefined'){
+            var measurement = Measurement.create(face.scores);
+            measurement.save().then(function(m){
+              io.emit('face:analyzed', m);
+            });
+          }
+        }else{
+          console.log('no faces found');
+        }
       }
-      console.log(result);
     });
   });
 
