@@ -4,7 +4,9 @@ var connect = require('camo').connect;
 var Measurement = require('./model/measurement');
 var config = require('./config.js');
 var ImageUpdater = require('./modules/imageUpdater');
+var ImageAnalyzer = require('./modules/imageAnalyzer');
 var imageUpdater = new ImageUpdater(config);
+var imageAnalyzer = new ImageAnalyzer(config);
 var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
@@ -20,7 +22,12 @@ connect(database).then(function (db) {
   var io = require('socket.io')(http); //TODO: set up websockets since we will surely need them later
 
   imageUpdater.on('imageUpdated', function(image){
-    console.log('Image updated: '+image);
+    imageAnalyzer.analyze(image, function(err, result){
+      if(err){
+        console.log(err);
+      }
+      console.log(result);
+    });
   });
 
   app.get('/', function (req, res) {
