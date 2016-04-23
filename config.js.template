@@ -1,6 +1,8 @@
 module.exports = {
   port: 3000,
   imagePath: '',
+  audioPath: '',
   updateFrequency: 5000,
+  audioDelay: 3,
   apiKey: ''
 };
