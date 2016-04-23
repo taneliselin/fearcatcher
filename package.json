@@ -1,0 +1,22 @@
+{
+  "name": "fearcatcher",
+  "version": "0.0.1",
+  "description": "System which uses different machine learning and AI apis to help people overcome their fears",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taneliselin/fearcatcher.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/taneliselin/fearcatcher/issues"
+  },
+  "homepage": "https://github.com/taneliselin/fearcatcher#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
