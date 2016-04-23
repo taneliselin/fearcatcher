@@ -11,7 +11,7 @@ var ImageUpdater = function (config) {
         if (err) {
           console.log('Error getting image: ' + err);
         }else{
-          _this.emit('imageUpdated', {image:_this.imagePath});
+          _this.emit('imageUpdated', _this.imagePath);
         }
       });
     }, _this.updateFrequency);
