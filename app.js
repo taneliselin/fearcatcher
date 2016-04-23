@@ -5,13 +5,21 @@ var Measurement = require('./model/measurement');
 var config = require('./config.js');
 var ImageUpdater = require('./modules/imageUpdater');
 var ImageAnalyzer = require('./modules/imageAnalyzer');
+var AudioRecorder = require('./modules/audioRecorder');
 var imageUpdater = new ImageUpdater(config);
 var imageAnalyzer = new ImageAnalyzer(config);
+var audioRecorder = new AudioRecorder(config);
 var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
 
 imageUpdater.start();
+
+setInterval(function(){
+  audioRecorder.rec(function(err, audioFile){
+    console.log('recorded audio: '+audioFile);
+  });
+}, 6000);
 
 connect(database).then(function (db) {
   app.set('views', path.join(__dirname, 'views'));
