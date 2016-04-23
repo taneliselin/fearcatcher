@@ -1,5 +1,6 @@
 module.exports = {
   port: 3000,
   imagePath: '',
-  updateFrequency: 5000
+  updateFrequency: 5000,
+  apiKey: ''
 };
