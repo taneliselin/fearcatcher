@@ -1,7 +1,38 @@
-# fearcatcher
-Project for Future Hack 2016
+# fearcatcher - Future Hack project
 
+Fear Catcher makes an assessment of your fear level during two days interactive assessment period. After conducting the assesment, Fear Catcher makes you the individual training plan based on your fear levels. Both the assessment and the training plan are based on scientifically well-valiated methods. 
 
+Fear Catcher takes in notice how you deal with the exercises and if needed alters the exercise making them easier or harder. The exercises happen in real world thus maximising your improvement in social situations. Because Fear Catcher evaluates your emotions all the time you use the equipment, the exercises are done in a fear level that improves your social skills and makes you feel safe at the same time. Besides the exercise done in real world, Fear Catcher's training program can also include relaxation exercises if you are coping with stress.  
+
+<img src="https://i.imgur.com/X0OjTCs.png">
+
+## Team Fear Catcher (in alphabetical order)
+
+Juuso Kolehmainen  
+Heikki Kurhinen  
+Jenni Raitanen  
+Taneli Selin  
+
+## Technologies and methods used
+
+**Desensitisation** - diminished emotional responsiveness to a negative stimulus after repeated exposure  
+**Relaxation exercises and techniques** - activates natural relaxation responses which are powerful antidotes to stress  
+
+**IBM Watson Tone Analyzer & Speech To Text** - analyzing the tone of speech and the rate of ventilation  
+**Microsoft Cognitive Services Emotion API** - analyzing feeling and emotions from facial expressions   
+
+**Raspberry Pi** - hardware for the portable device   
+**Rasbian** - linux distribution for Raspberry Pi  
+**Node.js** - server software  
+
+**3D Modelling & Printing** - casing for the portable device
+
+~~**Arduino (Nano) & components** - heart rate and perspiration measurement.~~ Tried but failed to build from scratch in time.
+
+## License
+
+Software of the project: GPL3  
+Rest of the project: CC-BY-SA
 
 ## Sources
 
