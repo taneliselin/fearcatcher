@@ -4,13 +4,17 @@
 	 viewBox="0 0 930.3 261.4" style="enable-background:new 0 0 930.3 261.4;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#EA4F85;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
-	.st2{fill:#010101;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st3{fill:#A1A1A1;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st4{fill:#2A2A2A;stroke:#000000;stroke-miterlimit:10;}
-	.st5{fill:#060606;stroke:#000000;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st7{fill:#E6332A;stroke:#000000;stroke-miterlimit:10;}
-	.st8{fill:#95C11F;stroke:#000000;stroke-miterlimit:10;}
+	.st1{font-family:'LeckerliOne-Regular';}
+	.st2{font-size:144.8881px;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#010101;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:#A1A1A1;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st6{fill:#2A2A2A;stroke:#000000;stroke-miterlimit:10;}
+	.st7{fill:#060606;stroke:#000000;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#E6332A;stroke:#000000;stroke-miterlimit:10;}
+	.st10{fill:#95C11F;stroke:#000000;stroke-miterlimit:10;}
 </style>
+<g id="logo">
+</g>
 </svg>
