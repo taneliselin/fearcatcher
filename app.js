@@ -63,7 +63,7 @@ connect(database).then(function (db) {
   
   audioRecorder.on('audioRecorded', function(audio){
     audioAnalyzer.analyze(audio, function(err, transcript){
-      if(transcript.results.length > 0){
+      if(transcript && transcript.results.length > 0){
         var fullText = '';
         for(var i = 0; i < transcript.results.length;i++){
           var currentRecord = transcript.results[i];
