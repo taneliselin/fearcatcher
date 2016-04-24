@@ -6,6 +6,8 @@ Fear Catcher takes in notice how you deal with the exercises and if needed alter
 
 With Fear Catcher you can access your data with any device. The Fear Catcher is server-based technology so you can access it with every device with internet connection. You can also give access to your data and device to your therapist or other medical professional.
 
+Presentation video: <a href="http://bit.ly/fearcatcher-video">http://bit.ly/fearcatcher-video</a>
+
 <img src="https://i.imgur.com/X0OjTCs.png">
 
 ## Team Fear Catcher (in alphabetical order)
