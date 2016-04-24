@@ -107,5 +107,23 @@
     tone_plot.setupGrid();
     tone_plot.draw();
   });
-
+  
+  socket.on('alert', function(data){
+    noty({
+      text: data.msg,
+      type: 'information',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+  
+  socket.on('praise', function(data){
+    noty({
+      text: data.msg,
+      type: 'success',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+  
 })();

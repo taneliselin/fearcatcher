@@ -40,6 +40,18 @@ connect(database).then(function (db) {
             var measurement = Measurement.create(face.scores);
             measurement.save().then(function(m){
               io.emit('face:analyzed', m);
+              if(m.anger > config.alerts.anger){
+                io.emit('alert', {emotion: 'anger', msg: 'You seem quite angry, try to calm down.'});
+              }
+              if(m.fear > config.alerts.fear){
+                io.emit('alert', {emotion: 'fear', msg: 'You seem quite afraid, dont be, everything will be just fine.'});
+              }
+              if(m.sadness > config.alerts.sadness){
+                io.emit('alert', {emotion: 'sadness', msg: 'You seem sad, cheer up!'});
+              }
+              if(m.happiness > config.praises.happiness){
+                io.emit('praise', {emotion: 'happiness', msg: 'You seem happy, keep it up!'});
+              }
             });
           }
         }else{
@@ -74,7 +86,19 @@ connect(database).then(function (db) {
             }
             var toneMeasurement = ToneMeasurement.create(toneObject);
             toneMeasurement.save().then(function(tm){
-              io.emit('tone:analyzed', tm); 
+              io.emit('tone:analyzed', tm);
+              if(tm.anger > config.alerts.anger){
+                io.emit('alert', {emotion: 'anger', msg: 'You sound quite angry, try to calm down.'});
+              }
+              if(tm.fear > config.alerts.fear){
+                io.emit('alert', {emotion: 'fear', msg: 'You sound quite afraid, dont be, everything will be just fine.'});
+              }
+              if(tm.sadness > config.alerts.sadness){
+                io.emit('alert', {emotion: 'sadness', msg: 'You sound sad, cheer up!'});
+              }
+              if(tm.joy > config.praises.happiness){
+                io.emit('praise', {emotion: 'happiness', msg: 'You sound happy, keep it up!'});
+              }
             });
           }
         });
