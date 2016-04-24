@@ -6,20 +6,17 @@ var config = require('./config.js');
 var ImageUpdater = require('./modules/imageUpdater');
 var ImageAnalyzer = require('./modules/imageAnalyzer');
 var AudioRecorder = require('./modules/audioRecorder');
+var AudioAnalyzer = require('./modules/audioAnalyzer');
 var imageUpdater = new ImageUpdater(config);
 var imageAnalyzer = new ImageAnalyzer(config);
 var audioRecorder = new AudioRecorder(config);
+var audioAnalyzer = new AudioAnalyzer(config);
 var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
 
 imageUpdater.start();
-
-setInterval(function(){
-  audioRecorder.rec(function(err, audioFile){
-    console.log('recorded audio: '+audioFile);
-  });
-}, 6000);
+audioRecorder.start();
 
 connect(database).then(function (db) {
   app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +24,7 @@ connect(database).then(function (db) {
   app.use(express.static(__dirname + '/public'));
   
   var http = require('http').Server(app);
-  var io = require('socket.io')(http); //TODO: set up websockets since we will surely need them later
+  var io = require('socket.io')(http);
 
   imageUpdater.on('imageUpdated', function(image){
     imageAnalyzer.analyze(image, function(err, result){
@@ -45,6 +42,19 @@ connect(database).then(function (db) {
         }else{
           console.log('no faces found');
         }
+      }
+    });
+  });
+  
+  audioRecorder.on('audioRecorded', function(audio){
+    audioAnalyzer.analyze(audio, function(err, transcript){
+      if(transcript.results.length > 0){
+        var fullText = '';
+        for(var i = 0; i < transcript.results.length;i++){
+          var currentRecord = transcript.results[i];
+          fullText += currentRecord.alternatives[0].transcript;
+        }
+        console.log(transcript);
       }
     });
   });

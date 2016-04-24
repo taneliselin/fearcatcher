@@ -6,20 +6,28 @@ var AudioRecorder = function (config) {
   var _this = this;
   _this.audioPath = config.audioPath;
   _this.audioDelay = config.audioDelay;
-  _this.rec = function (callback) {
-    exec('arecord -d '+_this.audioDelay+' '+_this.audioPath, function(err, stdout, stderr){
-      if(err){
-        callback(err);
-      }else{
-        callback(null, _this.audioPath);
-      }
-    });
+  _this.start = function () {
+    _this.recorder = setInterval(function () {
+      exec('arecord -r 44100 -d ' + _this.audioDelay + ' ' + _this.audioPath, function (err, stdout, stderr) {
+        if (err) {
+          console.log('Error recording audio');
+        } else {
+          _this.emit('audioRecorded', _this.audioPath);
+        }
+      });
+    }, _this.audioDelay * 1000);
+  }
+  _this.stop = function(){
+    clearInterval(_this.recorder);
   }
 };
 
 AudioRecorder.prototype = new events.EventEmitter;
-AudioRecorder.prototype.rec = function () {
+AudioRecorder.prototype.start = function () {
   this.start();
+};
+AudioRecorder.prototype.stop = function () {
+  this.stop();
 };
 
 module.exports = AudioRecorder;
