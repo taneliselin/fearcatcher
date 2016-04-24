@@ -15,7 +15,7 @@ var AudioRecorder = function (config) {
           _this.emit('audioRecorded', _this.audioPath);
         }
       });
-    }, _this.audioDelay * 1000);
+    }, (_this.audioDelay * 1000) + 500);
   }
   _this.stop = function(){
     clearInterval(_this.recorder);

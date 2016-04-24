@@ -54,7 +54,7 @@ connect(database).then(function (db) {
           var currentRecord = transcript.results[i];
           fullText += currentRecord.alternatives[0].transcript;
         }
-        console.log(transcript);
+        console.log(fullText);
       }
     });
   });

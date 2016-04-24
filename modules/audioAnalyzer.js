@@ -5,8 +5,8 @@ var fs = require('fs');
 var AudioRecorder = function (config) {
   var _this = this;
   _this.speech_to_text = watson.speech_to_text({
-    username: config.watsonUser,
-    password: config.watsonPw,
+    username: config.watsonTtsUser,
+    password: config.watsonTtsPw,
     version: 'v1'
   });
   _this.analyze = function (audioFile, callback) {
