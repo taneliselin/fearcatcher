@@ -8,51 +8,15 @@ html(lang='en')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css', integrity='sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r', crossorigin='anonymous')
   body
     nav.navbar.navbar-inverse.navbar-fixed-top
-    .container
-      .navbar-header
-        a.navbar-brand(href='#')
-          img(src='/img/fearcatcher.png')
-    .container
-      .starter-template
-        h1 Bootstrap starter template
-        p.lead
-          | Use this document as a way to quickly start any new project.
-          br
-          |  All you get is this text and a mostly barebones HTML document.
-
-    h1 FearCatcher
-    h3 Facial expression analysis
-    p anger:&nbsp;
-      span#anger
-    p contempt:&nbsp;
-      span#contempt
-    p disgust:&nbsp;
-      span#disgust
-    p fear:&nbsp;
-      span#fear
-    p happiness:&nbsp;
-      span#happiness
-    p neutral:&nbsp;
-      span#neutral
-    p sadness:&nbsp;
-      span#sadness
-    p surprise:&nbsp;
-      span#surprise
-    br
-    h3 Tone analysis
-    p anger:&nbsp;
-      span#anger-tone
-    p disgust:&nbsp;
-      span#disgust-tone
-    p fear:&nbsp;
-      span#fear-tone
-    p joy:&nbsp;
-      span#joy-tone
-    p sadness:&nbsp;
-      span#sadness-tone
+      .container
+        img(src='/img/fearcatcher.png')
+    .container.fc-main
+      #face-container
+      #tone-container
     script(src='https://code.jquery.com/jquery-2.2.3.min.js', integrity='sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=', crossorigin='anonymous')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', integrity='sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS', crossorigin='anonymous')
     script(src='/js/jquery.flot.min.js')
     script(src='/js/jquery.flot.resize.min.js')
+    script(src='/js/jquery.flot.time.min.js')
     script(src='/socket.io/socket.io.js')
     script(src='/js/main.js')
