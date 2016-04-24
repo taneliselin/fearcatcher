@@ -4,6 +4,8 @@ Fear Catcher makes an assessment of your fear level during two days interactive 
 
 Fear Catcher takes in notice how you deal with the exercises and if needed alters the exercise making them easier or harder. The exercises happen in real world thus maximising your improvement in social situations. Because Fear Catcher evaluates your emotions all the time you use the equipment, the exercises are done in a fear level that improves your social skills and makes you feel safe at the same time. Besides the exercise done in real world, Fear Catcher's training program can also include relaxation exercises if you are coping with stress.  
 
+With Fear Catcher you can access your data with any device. The Fear Catcher is server-based technology so you can access it with every device with internet connection. You can also give access to your data and device to your therapist or other medical professional.
+
 <img src="https://i.imgur.com/X0OjTCs.png">
 
 ## Team Fear Catcher (in alphabetical order)
