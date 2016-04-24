@@ -2,15 +2,18 @@ var express = require('express');
 var path = require('path');
 var connect = require('camo').connect;
 var Measurement = require('./model/measurement');
+var ToneMeasurement = require('./model/toneMeasurement');
 var config = require('./config.js');
 var ImageUpdater = require('./modules/imageUpdater');
 var ImageAnalyzer = require('./modules/imageAnalyzer');
 var AudioRecorder = require('./modules/audioRecorder');
 var AudioAnalyzer = require('./modules/audioAnalyzer');
+var ToneAnalyzer = require('./modules/toneAnalyzer');
 var imageUpdater = new ImageUpdater(config);
 var imageAnalyzer = new ImageAnalyzer(config);
 var audioRecorder = new AudioRecorder(config);
 var audioAnalyzer = new AudioAnalyzer(config);
+var toneAnalyzer = new ToneAnalyzer(config);
 var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
@@ -54,7 +57,27 @@ connect(database).then(function (db) {
           var currentRecord = transcript.results[i];
           fullText += currentRecord.alternatives[0].transcript;
         }
-        console.log(fullText);
+        toneAnalyzer.analyze(fullText, function(err, tone){
+          var categories = tone.document_tone.tone_categories;
+          var emotionCategory = null;
+          for(var j = 0; j < categories.length; j++){
+            if(categories[j].category_id == 'emotion_tone'){
+              emotionCategory = categories[j];
+              break;
+            }
+          }
+          if(emotionCategory){
+            var toneObject = {};
+            for(var n = 0; n < emotionCategory.tones.length;n++){
+              var currentTone = emotionCategory.tones[n];
+              toneObject[currentTone.tone_id] = currentTone.score;
+            }
+            var toneMeasurement = ToneMeasurement.create(toneObject);
+            toneMeasurement.save().then(function(tm){
+              io.emit('tone:analyzed', tm); 
+            });
+          }
+        });
       }
     });
   });

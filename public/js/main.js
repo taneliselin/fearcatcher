@@ -13,5 +13,12 @@
     $('#surprise').text(data.surprise);
   });
   
+  socket.on('tone:analyzed', function(data){
+    $('#anger-tone').text(data.anger);
+    $('#disgust-tone').text(data.disgust);
+    $('#fear-tone').text(data.fear);
+    $('#joy-tone').text(data.joy);
+    $('#sadness-tone').text(data.sadness);
+  });
   
 })();
