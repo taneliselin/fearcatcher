@@ -6,9 +6,17 @@ Fear Catcher takes in notice how you deal with the exercises and if needed alter
 
 <img src="https://i.imgur.com/X0OjTCs.png">
 
-## Team Fear Catcher
+## Team Fear Catcher (in alphabetical order)
 
-## Technologies used
+Juuso Kolehmainen  
+Heikki Kurhinen  
+Jenni Raitanen  
+Taneli Selin  
+
+## Technologies and methods used
+
+**Desensitisation** - diminished emotional responsiveness to a negative stimulus after repeated exposure  
+**Relaxation exercises and techniques** - activates natural relaxation responses which are powerful antidotes to stress  
 
 **IBM Watson Tone Analyzer & Speech To Text** - analyzing the tone of speech and the rate of ventilation  
 **Microsoft Cognitive Services Emotion API** - analyzing feeling and emotions from facial expressions   
