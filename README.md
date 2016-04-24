@@ -6,19 +6,19 @@ a brief description
 
 ## Technologies used
 
-IBM Watson Tone Analyzer & Speech To Text - analyzing the tone of speech and the rate of ventilation
-Microsoft Cognitive Services Emotion API - analyzing feeling and emotions from facial expressions 
+IBM Watson Tone Analyzer & Speech To Text - analyzing the tone of speech and the rate of ventilation  
+Microsoft Cognitive Services Emotion API - analyzing feeling and emotions from facial expressions   
 
-Raspberry Pi - hardware for the portable device
-Rasbian - linux distribution for Raspberry Pi
-Node.js - server software
+Raspberry Pi - hardware for the portable device   
+Rasbian - linux distribution for Raspberry Pi  
+Node.js - server software  
 
 3D Modelling & Printing - casing for the portable device
 
 ## License
 
-Software GPL3
-Rest of project CC-BY-SA
+Software GPL3  
+Rest of the project CC-BY-SA
 
 ## Sources
 
