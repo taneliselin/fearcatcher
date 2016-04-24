@@ -26,6 +26,7 @@ Taneli Selin
 **Node.js** - server software  
 
 **3D Modelling & Printing** - casing for the portable device
+**Laser Engraving** - engraving the product logo to the casing
 
 ~~**Arduino (Nano) & components** - heart rate and perspiration measurement.~~ Tried but failed to build from scratch in time.
 
