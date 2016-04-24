@@ -1,24 +1,28 @@
-# fearcatcher - Future Hack 2016 project
+# fearcatcher - Future Hack project
 
-a brief description
+Fear Catcher makes an assessment of your fear level during two days interactive assessment period. After conducting the assesment, Fear Catcher makes you the individual training plan based on your fear levels. Both the assessment and the training plan are based on scientifically well-valiated methods. 
 
-## Crew
+Fear Catcher takes in notice how you deal with the exercises and if needed alters the exercise making them easier or harder. The exercises happen in real world thus maximising your improvement in social situations. Because Fear Catcher evaluates your emotions all the time you use the equipment, the exercises are done in a fear level that improves your social skills and makes you feel safe at the same time. Besides the exercise done in real world, Fear Catcher's training program can also include relaxation exercises if you are coping with stress.  
+
+<img src="https://i.imgur.com/X0OjTCs.png">
+
+## Team Fear Catcher
 
 ## Technologies used
 
-IBM Watson Tone Analyzer & Speech To Text - analyzing the tone of speech and the rate of ventilation  
-Microsoft Cognitive Services Emotion API - analyzing feeling and emotions from facial expressions   
+**IBM Watson Tone Analyzer & Speech To Text** - analyzing the tone of speech and the rate of ventilation  
+**Microsoft Cognitive Services Emotion API** - analyzing feeling and emotions from facial expressions   
 
-Raspberry Pi - hardware for the portable device   
-Rasbian - linux distribution for Raspberry Pi  
-Node.js - server software  
+**Raspberry Pi** - hardware for the portable device   
+**Rasbian** - linux distribution for Raspberry Pi  
+**Node.js** - server software  
 
-3D Modelling & Printing - casing for the portable device
+**3D Modelling & Printing** - casing for the portable device
 
 ## License
 
-Software GPL3  
-Rest of the project CC-BY-SA
+Software of the project: GPL3  
+Rest of the project: CC-BY-SA
 
 ## Sources
 
