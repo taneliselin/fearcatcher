@@ -19,6 +19,8 @@ Fear Catcher takes in notice how you deal with the exercises and if needed alter
 
 **3D Modelling & Printing** - casing for the portable device
 
+~~**Arduino (Nano) & components** - heart rate and perspiration measurement.~~ Tried but failed to build from scratch in time.
+
 ## License
 
 Software of the project: GPL3  
