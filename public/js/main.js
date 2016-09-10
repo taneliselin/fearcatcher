@@ -125,5 +125,64 @@
       timeout: 10000
     });
   });
+
+  socket.on('moodmetric:data', function(data){
+    $('.mmValue').text(data.mm);
+    $('.instantValue').text(data.instant);
+  });
+
+  socket.on('moodmetric:warning:mm:ended', function(data){
+    noty({
+      text: 'elevated MM dropped',
+      type: 'success',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+
+  socket.on('moodmetric:warning:mm:started', function(data){
+    noty({
+      text: 'elevated MM warning',
+      type: 'information',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+
+  socket.on('moodmetric:reaction', function(data){
+    noty({
+      text: 'Strong reaction detected',
+      type: 'information',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+
+  socket.on('moodmetric:ring:removed', function(){
+    noty({
+      text: 'Ring was removed from finger',
+      type: 'error',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+
+  socket.on('moodmetric:battery', function(){
+    noty({
+      text: 'Ring battery is empty',
+      type: 'error',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
+
+  socket.on('moodmetric:ring:inserted', function(){
+    noty({
+      text: 'Ring was inserted to finger',
+      type: 'success',
+      layout: 'top',
+      timeout: 10000
+    });
+  });
   
 })();

@@ -18,18 +18,26 @@ var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
 
-imageUpdater.start();
-audioRecorder.start();
+//imageUpdater.start();
+//audioRecorder.start();
 
 connect(database).then(function (db) {
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
   app.use(express.static(__dirname + '/public'));
   
+  app.all('/', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+    next();
+  });
+  
   var http = require('http').Server(app);
   var io = require('socket.io')(http);
 
-  imageUpdater.on('imageUpdated', function(image){
+  require('./modules/moodMetric')(io);
+
+  /*imageUpdater.on('imageUpdated', function(image){
     imageAnalyzer.analyze(image, function(err, result){
       if(err){
         console.log(err);
@@ -59,9 +67,9 @@ connect(database).then(function (db) {
         }
       }
     });
-  });
+  });*/
   
-  audioRecorder.on('audioRecorded', function(audio){
+  /*audioRecorder.on('audioRecorded', function(audio){
     audioAnalyzer.analyze(audio, function(err, transcript){
       if(transcript && transcript.results.length > 0){
         var fullText = '';
@@ -104,7 +112,7 @@ connect(database).then(function (db) {
         });
       }
     });
-  });
+  });*/
 
   app.get('/', function (req, res) {
     res.render('index');
