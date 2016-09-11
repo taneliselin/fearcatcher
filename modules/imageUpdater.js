@@ -7,7 +7,7 @@ var ImageUpdater = function (config) {
   _this.updateFrequency = config.updateFrequency;
   _this.start = function () {
     _this.updater = setInterval(function () {
-      exec('fswebcam -r 640x480 --jpeg 85 ' + _this.imagePath, function (err, stdout, stderr) {
+      exec('fswebcam -r 1024x800 --jpeg 85 ' + _this.imagePath, function (err, stdout, stderr) {
         if (err) {
           console.log('Error getting image: ' + err);
         }else{

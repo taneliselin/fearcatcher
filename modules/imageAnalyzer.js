@@ -6,21 +6,28 @@ var ImageAnalyzer = function (config) {
   var _this = this;
   _this.apiKey = config.apiKey;
   _this.analyze = function (image, callback) {
-    fs.createReadStream(image).pipe(request.post({
-      url: 'https://api.projectoxford.ai/emotion/v1.0/recognize',
-      headers: {
-        'Content-Type': 'application/octet-stream',
-        'Ocp-Apim-Subscription-Key': _this.apiKey
-      }
-    }, function(err, res, body){
-      if(err){
-        callback(err)
-      }else if (res.statusCode !== 200) {
-        callback('Returned statusCode: '+res.statusCode);
-      }else{
-        callback(null, JSON.parse(body));
-      }
-    }));
+    fs.readFile(image, function (err, data) {
+      var imageData = new Buffer(data.toString('binary'), 'binary');
+      request({
+        url: 'https://api.projectoxford.ai/emotion/v1.0/recognize',
+        method: 'POST',
+        json: false,
+        body: imageData,
+        headers: {
+          'content-type': 'application/octet-stream',
+          'Ocp-Apim-Subscription-Key': _this.apiKey
+        }
+      }, function (err, res, body) {
+        if (err) {
+          callback(err)
+        } else if (res.statusCode !== 200) {
+          callback('Returned statusCode: ' + res.statusCode);
+          console.log(body);
+        } else {
+          callback(null, JSON.parse(body));
+        }
+      });
+    });
   }
 };
 

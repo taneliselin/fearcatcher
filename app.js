@@ -18,7 +18,7 @@ var app = express();
 var database = 'nedb://./data';
 var currentScore = 0;
 
-//imageUpdater.start();
+imageUpdater.start();
 //audioRecorder.start();
 
 connect(database).then(function (db) {
@@ -37,7 +37,7 @@ connect(database).then(function (db) {
 
   require('./modules/moodMetric')(io);
 
-  /*imageUpdater.on('imageUpdated', function(image){
+  imageUpdater.on('imageUpdated', function(image){
     imageAnalyzer.analyze(image, function(err, result){
       if(err){
         console.log(err);
@@ -67,7 +67,7 @@ connect(database).then(function (db) {
         }
       }
     });
-  });*/
+  });
   
   /*audioRecorder.on('audioRecorded', function(audio){
     audioAnalyzer.analyze(audio, function(err, transcript){
